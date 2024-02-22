@@ -4,7 +4,7 @@ public class Switch {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int day =  7;
+		int day =  5;
 		switch (day) {
 		case 1:
 			System.out.println("Monday");
