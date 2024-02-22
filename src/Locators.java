@@ -1,41 +1,42 @@
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Locators {
 
 	public static void main(String[] args) throws Exception {
-		// TODO Auto-generated method stub
+		new String();
 		
-		ChromeDriver driver = new ChromeDriver ();
+		WebDriver driver1 = (WebDriver) new ChromeDriver ();
 		
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.get("https://rahulshettyacademy.com/locatorspractice/");
-		driver.findElement(By.id("inputUsername")).sendKeys("ravi");
-		driver.findElement(By.name("inputPassword")).sendKeys("ravi@1234");
-		driver.findElement(By.className("signInBtn")).click();
-	    System.out.println(driver.findElement(By.cssSelector("p.error")).getText());
-	    driver.findElement(By.linkText("Forgot your password?")).click();
-	    driver.findElement(By.xpath("//input[@placeholder='Name']")).sendKeys("Prathvi Malviya");
-	    driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys("prathvimalviya2023@gmail.com");
-	    driver.findElement(By.xpath("//input[@placeholder='Phone Number']")).sendKeys("7869116182");
+		((WebDriver) driver1).manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver1.get("https://rahulshettyacademy.com/locatorspractice/");
+		driver1.findElement(By.id("inputUsername")).sendKeys("ravi");
+		driver1.findElement(By.name("inputPassword")).sendKeys("ravi@1234");
+		driver1.findElement(By.className("signInBtn")).click();
+	    System.out.println(driver1.findElement(By.cssSelector("p.error")).getText());
+	    driver1.findElement(By.linkText("Forgot your password?")).click();
+	    driver1.findElement(By.xpath("//input[@placeholder='Name']")).sendKeys("Prathvi Malviya");
+	    driver1.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys("prathvimalviya2023@gmail.com");
+	    driver1.findElement(By.xpath("//input[@placeholder='Phone Number']")).sendKeys("7869116182");
 	    Thread.sleep(1000);
-	    driver.findElement(By.className("reset-pwd-btn")).click();
-	    System.out.println(driver.findElement(By.className("infoMsg")).getText());
-	    driver.findElement(By.className("go-to-login-btn")).click();
+	    driver1.findElement(By.className("reset-pwd-btn")).click();
+	    System.out.println(driver1.findElement(By.className("infoMsg")).getText());
+	    driver1.findElement(By.className("go-to-login-btn")).click();
 	    Thread.sleep(2000);
-	    driver.findElement(By.xpath("//input[@placeholder='Username']")).sendKeys("rahul");
-	    driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("rahulshettyacademy");
-	    driver.findElement(By.id("chkboxOne")).click();
-	    driver.findElement(By.xpath("//button[@type='submit']")).click();
-	    driver.findElement(By.xpath("//button[@class='logout-btn']")).click();
-	    driver.close();
+	    driver1.findElement(By.xpath("//input[@placeholder='Username']")).sendKeys("rahul");
+	    driver1.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("rahulshettyacademy");
+	    driver1.findElement(By.id("chkboxOne")).click();
+	    driver1.findElement(By.xpath("//button[@type='submit']")).click();
+	    driver1.findElement(By.xpath("//button[@class='logout-btn']")).click();
+	    driver1.close();
 	    
 
 	}
 	
-	public void getpassword(ChromeDriver driver) throws InterruptedException
+	public String getpassword(ChromeDriver driver) throws InterruptedException
 	
 	{
 		driver.get("https://rahulshettyacademy.com/locatorspractice/");
@@ -43,8 +44,8 @@ public class Locators {
         Thread.sleep(1000);
 	    driver.findElement(By.className("reset-pwd-btn")).click();
 	    String passwordText=driver.findElement(By.className("infoMsg")).getText();
-	    //Please use temporary password 'rahulshettyacademy' to Login
-	    passwordText.split(passwordText);
+	    passwordText.split("'");
+		return passwordText;
 
 
 		
